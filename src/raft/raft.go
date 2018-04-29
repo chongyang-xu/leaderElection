@@ -64,6 +64,7 @@ type Raft struct {
 
 	role int
 	electTimer *time.Timer
+	heartbeatTimer *time.Timer
 	discoverLeader  chan int
 	newTerm    chan int
 	winElect    chan int
@@ -164,7 +165,6 @@ type RequestVoteReply struct {
 func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// Your code here (2A, 2B).
 	/**/
-	//DPrintf("Invoke RequestVote\n")
 	curTerm := 0
 	voted := -1
 	//var log []LogEntry
@@ -239,7 +239,9 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 // the struct itself.
 //
 func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *RequestVoteReply) bool {
+	DPrintf("[MESSG]peer %d -> peer %d, Snd ReqVote", rf.me, server)
 	ok := rf.peers[server].Call("Raft.RequestVote", args, reply)
+	DPrintf("[MESSG]peer %d <- peer %d, ReqVote Rep, %v", rf.me, server, ok)
 	return ok
 }
 
@@ -259,7 +261,6 @@ type AppendEntriesReply struct{
 }
 
 func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply){
-	//DPrintf("Invoke AppendEntries\n")
 	curTerm := 0
 	ifcan:=false
 	rf.withLock(func(){
@@ -291,7 +292,9 @@ func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply
 	}
 }
 func (rf *Raft) sendAppendEntries(server int, args* AppendEntriesArgs, reply* AppendEntriesReply) bool{
+	DPrintf("[MESSG]peer %d -> peer %d, Snd ApdEntry", rf.me, server)
 	ok := rf.peers[server].Call("Raft.AppendEntries", args, reply)
+	DPrintf("[MESSG]peer %d <- peer %d, ApdEntry Rep, %v", rf.me, server, ok)
 	return ok
 }
 /**/
@@ -368,6 +371,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.readPersist(persister.ReadRaftState())
 	
 	rf.electTimer = time.NewTimer(randomTimeout())
+	rf.heartbeatTimer = time.NewTimer(fixedTimeout())
 	rf.discoverLeader = make(chan int)
 	rf.newTerm = make(chan int)
 	rf.winElect = make(chan int)
@@ -375,7 +379,6 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	//state machine
 	go func(){
 	for{
-	DPrintf("%d into for{}\n", rf.me)
 	start:
 
 		/*
@@ -386,20 +389,20 @@ func Make(peers []*labrpc.ClientEnd, me int,
 		switch role{
 			//channel 用作转换条件合不合适，状态转移是瞬时的，channel有思索风险
 			case follower:
-				DPrintf("peer %d, ->follower\n", rf.me)
+				DPrintf("[STATE]peer %d, ->follower\n", rf.me)
 				for{
 				select{
 					case <-rf.newTerm:
-						DPrintf("peer %d, follower: newTerm\n", rf.me)
+						DPrintf("[STATE]peer %d, follower: newTerm\n", rf.me)
 						goto start
 					case <-rf.electTimer.C:
-						DPrintf("peer %d, follower: elec timeout\n", rf.me)
+						DPrintf("[STATE]peer %d, follower: elec timeout\n", rf.me)
 						rf.withLock(func(){rf.role=candicate})
 						goto start
 				}//end select
 				}//end for
 			case candicate:
-				DPrintf("peer %d, ->candicate\n",rf.me)
+				DPrintf("[STATE]peer %d, ->candicate\n",rf.me)
 				rf.withLock(func(){rf.currentTerm++})
 				rf.withLock(func(){rf.votedFor = rf.me})
 				rf.withLock(func(){rf.resetOrNewElectTimer(randomTimeout())} )
@@ -422,9 +425,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 						for ok:=false; !ok;{
 							//发送期间，rf的term变了怎么办：
 							//ans:这种情况说明term落后了，仍用最初的term发出即可，请求会被拒绝
-							//DPrintf("peer %d, sendRequestVote\n", rf.me)
 							ok = rf.sendRequestVote(server, args, &reply)
-							//DPrintf("peer %d, sendRequestVote return %v\n", rf.me, ok)
 							//RPC 的行为？阻塞？重传？
 							//if !ok {
 							//	time.Sleep(fixedTimeout())
@@ -472,23 +473,23 @@ func Make(peers []*labrpc.ClientEnd, me int,
 				for{
 				select{
 					case <-rf.newTerm:
-						DPrintf("peer %d, candicate: newTerm\n", rf.me)
+						DPrintf("[STATE]peer %d, candicate: newTerm\n", rf.me)
 						goto start
 					case <-rf.winElect:
-						DPrintf("peer %d, candicate: voted sucess\n", rf.me)
+						DPrintf("[STATE]peer %d, candicate: voted sucess\n", rf.me)
 						rf.withLock(func(){rf.role=leader})
 						goto start
 					case <-rf.discoverLeader:
-						DPrintf("peer %d, candicate: disc leader\n", rf.me)
+						DPrintf("[STATE]peer %d, candicate: disc leader\n", rf.me)
 						rf.withLock(func(){rf.role=follower})
 						goto start
 					case <-rf.electTimer.C:
-						DPrintf("peer %d, candicate: elect timeout\n", rf.me)
+						DPrintf("[STATE]peer %d, candicate: elect timeout\n", rf.me)
 						goto start
 				}//end select
 				}//end for
 			case leader:
-				DPrintf("peer %d, ->leader\n",rf.me)
+				DPrintf("[STATE]peer %d, ->leader\n",rf.me)
 				/*
 					initial empty heartbeat?
 				*/
@@ -523,14 +524,15 @@ func Make(peers []*labrpc.ClientEnd, me int,
 						}
 					}(i)
 				}
-
+				rf.withLock(func(){ rf.resetHeartbeatTimer(fixedTimeout()) })
 				for{
 				select{
 					//case <- command:
 					case <-rf.newTerm:
-						DPrintf("peer %d, leader: new Term\n", rf.me)
+						DPrintf("[STATE]peer %d, leader: new Term\n", rf.me)
+						rf.withLock(func(){ rf.resetHeartbeatTimer(fixedTimeout()) })
 						goto start
-					default:
+					case <- rf.heartbeatTimer.C:
 						/*
 						for{
 							switch{
@@ -573,8 +575,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 								}
 							}(i)
 						}
-						//不加sleep会发送过多消息
-						time.Sleep(fixedTimeout())
+						rf.withLock(func(){ rf.resetHeartbeatTimer(fixedTimeout()) })
 				}//end select
 				}//end for
 		}
@@ -591,8 +592,8 @@ func Make(peers []*labrpc.ClientEnd, me int,
 //RPC timeout是多少
 const(
 	election_timeout = 300
-	time_interval = 300
-	fixed_timeout = 20
+	time_interval = 200  //need finish election in 5 seconds
+	fixed_timeout = 150 //must greater than 100, required by tester
 )
 
 func randomTimeout() time.Duration {
@@ -621,9 +622,13 @@ func (rf *Raft) safeGetRole() int{
 */
 func (rf *Raft) resetOrNewElectTimer(d time.Duration) {
 	//may have bug here, re-look timer api carefully
-	//DPrintf("peer %d, resetTimer %v\n", rf.me, d)
 	rf.electTimer.Stop()
 	rf.electTimer.Reset(d)
+}
+
+func (rf *Raft) resetHeartbeatTimer(d time.Duration){
+	rf.heartbeatTimer.Stop()
+	rf.heartbeatTimer.Reset(d)
 }
 /*
 func (rf *Raft) safeIncTerm(){
