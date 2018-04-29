@@ -55,18 +55,18 @@ type Raft struct {
 	currentTerm int
 	votedFor int
 	log	[]LogEntry
-	
+
 	commitIndex int
 	lastApplied int
-	
+
 	nextIndex []int
 	matchIndex []int
-	
+
 	role int
 	electTimer *time.Timer
 	discoverLeader  chan int
 	newTerm    chan int
-
+	winElect    chan int
 	/**/
 }
 /**/
@@ -180,19 +180,17 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		reply.Term = curTerm
 		reply.VoteGranted = false
 		return
-	case args.Term > curTerm://执行到这儿，currentTerm变了怎么办？发送channl之前宕机怎么办
-		rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
+	case args.Term > curTerm://执行到这儿，发送channl之前宕机怎么办
 		rf.withLock(func(){
 			rf.currentTerm = args.Term
 			rf.role = follower
-			//rf.votedFor = args.CandicateId
-			reply.Term = args.Term
-			reply.VoteGranted = false
+			rf.votedFor = -1
+			curTerm = args.Term
+			voted = -1
 		})
 		rf.newTerm <- 1
-		return
+		fallthrough
 	case args.Term == curTerm:
-		rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 		cond1 := voted == -1 || voted == args.CandicateId
 		//cond2 := args.LastLogTerm > rf.log[len(rf.log)-1].Term || ( args.LastLogTerm == rf.log[len(rf.log)-1].Term && args.LastLogIndex >= len(rf.log) )
 		cond2 := true
@@ -200,6 +198,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 			reply.Term = curTerm
 			reply.VoteGranted = true
 			rf.withLock(func(){rf.votedFor = args.CandicateId})
+			rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 			return
 		}else{
 			reply.Term = curTerm
@@ -262,8 +261,10 @@ type AppendEntriesReply struct{
 func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply){
 	//DPrintf("Invoke AppendEntries\n")
 	curTerm := 0
+	ifcan:=false
 	rf.withLock(func(){
 		curTerm = rf.currentTerm
+		ifcan = (rf.role==candicate)
 	})
 	switch{
 	case args.Term < curTerm:
@@ -285,6 +286,7 @@ func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply
 		rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 		reply.Term = curTerm
 		reply.Success = true
+		if ifcan {rf.discoverLeader <- 1}
 		return
 	}
 }
@@ -366,11 +368,15 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	rf.readPersist(persister.ReadRaftState())
 	
 	rf.electTimer = time.NewTimer(randomTimeout())
+	rf.discoverLeader = make(chan int)
+	rf.newTerm = make(chan int)
+	rf.winElect = make(chan int)
 
 	//state machine
 	go func(){
 	for{
-	start://use continue?
+	DPrintf("%d into for{}\n", rf.me)
+	start:
 
 		/*
 			check commit
@@ -379,30 +385,45 @@ func Make(peers []*labrpc.ClientEnd, me int,
 		rf.withLock(func(){role=rf.role})
 		switch role{
 			case follower:
+				DPrintf("peer %d, ->follower\n", rf.me)
+				for{
 				select{
 					case <-rf.newTerm:
+						DPrintf("peer %d, follower: newTerm\n", rf.me)
 						goto start
 					case <-rf.electTimer.C:
+						DPrintf("peer %d, follower: elec timeout\n", rf.me)
 						rf.withLock(func(){rf.role=candicate})
 						goto start
-				}
-
+				}//end select
+				}//end for
 			case candicate:
+				DPrintf("peer %d, ->candicate\n",rf.me)
 				rf.withLock(func(){rf.currentTerm++})
 				rf.withLock(func(){rf.votedFor = rf.me})
 				rf.withLock(func(){rf.resetOrNewElectTimer(randomTimeout())} )
 				//send requestVote
 				votes := 0
-				var mut sync.Mutex
-				for i :=range rf.peers{
-					go func(server int, mu *sync.Mutex){
-						args := &RequestVoteArgs{Term:rf.currentTerm, CandicateId:rf.me}//race condition
+				//var mux sync.Mutex
+				for i := range rf.peers{
+					if i == rf.me {
+						continue
+					}
+					go func(server int){
+						curTerm := 0
+						cand := 0
+						rf.withLock(func(){
+							curTerm = rf.currentTerm
+							cand	= rf.me
+						})
+						args := &RequestVoteArgs{Term:curTerm, CandicateId:cand}
 						reply := RequestVoteReply{}
 						for ok:=false; !ok;{
 							//发送期间，rf的term变了怎么办：
 							//ans:这种情况说明term落后了，仍用最初的term发出即可，请求会被拒绝
-
+							//DPrintf("peer %d, sendRequestVote\n", rf.me)
 							ok = rf.sendRequestVote(server, args, &reply)
+							//DPrintf("peer %d, sendRequestVote return %v\n", rf.me, ok)
 							//RPC 的行为？阻塞？重传？
 							//if !ok {
 							//	time.Sleep(fixedTimeout())
@@ -411,55 +432,100 @@ func Make(peers []*labrpc.ClientEnd, me int,
 						//再读边界情况 student tutorial
 						//等到rpc响应的时候，role已经变了，怎么办？
 						//ans:目前来看，没有影响，重新选举时候是新的vote变量副本，旧副本上的vote修改不影响	
-						curTerm := 0
+						/*curTerm := 0
+						curTerm = 0
 						equal := false
 						rf.withLock(func(){
 							curTerm = rf.currentTerm
 							equal = reply.Term== rf.currentTerm
 						})
+*/
+						rf.withLock(func(){ curTerm = rf.currentTerm })
 						//收到请求时，term可能已经变了，不是当前term的投票没有意义
-						if reply.Term > curTerm{
+						switch{
+						case reply.Term < curTerm:
+							//do what?
+							return
+						case reply.Term > curTerm:
 							rf.withLock(func(){
 								rf.currentTerm = reply.Term
+								rf.votedFor = -1
 								rf.role = follower
 							})
 							rf.newTerm <- 1
 							return
-						}
 						//是否换成选举成功channel，channel会不会清不干净？
-						if equal && reply.VoteGranted{
-							mu.Lock()
-							votes++
-							mu.Unlock()
+						case reply.Term==curTerm && reply.VoteGranted:
+							win := false
+							rf.withLock(func(){
+								votes++
+								win = (votes >= int(len(rf.peers)/2))
+							})
+							if win {
+								rf.winElect <- 1
+							}
 						}
-					}(i, &mut)
+					}(i)
 				}
 				//transition
+				for{
 				select{
 					case <-rf.newTerm:
+						DPrintf("peer %d, candicate: newTerm\n", rf.me)
+						goto start
+					case <-rf.winElect:
+						DPrintf("peer %d, candicate: voted sucess\n", rf.me)
+						rf.withLock(func(){rf.role=leader})
 						goto start
 					case <-rf.discoverLeader:
+						DPrintf("peer %d, candicate: disc leader\n", rf.me)
 						rf.withLock(func(){rf.role=follower})
 						goto start
 					case <-rf.electTimer.C:
+						DPrintf("peer %d, candicate: elect timeout\n", rf.me)
 						goto start
-					default:
-						mut.Lock()
-						if votes > len(rf.peers)/2 {
-							rf.role=leader//race condition
-							mut.Unlock()
-							goto start
-						}
-						mut.Unlock()
-				}
+				}//end select
+				}//end for
 			case leader:
+				DPrintf("peer %d, ->leader\n",rf.me)
 				/*
 					initial empty heartbeat?
 				*/
+				for i := range rf.peers{
+					if i==rf.me {
+						continue
+					}
+					go func(server int){
+						curTerm :=0
+						leaderId :=0
+						rf.withLock(func(){
+							curTerm = rf.currentTerm
+							leaderId = rf.me
+						})
+						args := &AppendEntriesArgs{Term:curTerm, LeaderId:leaderId}
+						reply := AppendEntriesReply{}
+						ok := rf.sendAppendEntries(server, args, &reply)
+						if ok {
+							curTerm := 0
+							rf.withLock(func(){curTerm = rf.currentTerm})
+							if reply.Term > curTerm{
+								rf.withLock(func(){
+									rf.currentTerm = reply.Term
+									rf.role = follower
+									rf.votedFor = -1
+								})
+								rf.newTerm <- 1
+								return
+							}
+						}
+					}(i)
+				}
 
+				for{
 				select{
 					//case <- command:
 					case <-rf.newTerm:
+						DPrintf("peer %d, leader: new Term\n", rf.me)
 						goto start
 					default:
 						/*
@@ -473,12 +539,18 @@ func Make(peers []*labrpc.ClientEnd, me int,
 						}
 						*/
 						//heartbeat
-						for i :=range rf.peers{
+						for i := range rf.peers{
 							if i==rf.me {
 								continue
 							}
 							go func(server int){
-								args := &AppendEntriesArgs{Term:rf.currentTerm, LeaderId:rf.me}//race condition
+								curTerm :=0
+								leaderId :=0
+								rf.withLock(func(){
+									curTerm = rf.currentTerm
+									leaderId = rf.me
+								})
+								args := &AppendEntriesArgs{Term:curTerm, LeaderId:leaderId}
 								reply := AppendEntriesReply{}
 								ok := rf.sendAppendEntries(server, args, &reply)
 								if ok {
@@ -488,6 +560,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 										rf.withLock(func(){
 											rf.currentTerm = reply.Term
 											rf.role = follower
+											rf.votedFor = -1
 										})
 										rf.newTerm <- 1
 										return
@@ -497,7 +570,8 @@ func Make(peers []*labrpc.ClientEnd, me int,
 						}
 						//不加sleep会发送过多消息
 						time.Sleep(fixedTimeout())
-				}
+				}//end select
+				}//end for
 		}
 	}
 	}()
@@ -510,9 +584,9 @@ func Make(peers []*labrpc.ClientEnd, me int,
 //timeout settings
 //
 const(
-	election_timeout = 500
-	time_interval =500
-	fixed_timeout = 200
+	election_timeout = 150
+	time_interval =150
+	fixed_timeout = 50
 )
 
 func randomTimeout() time.Duration {
@@ -541,9 +615,8 @@ func (rf *Raft) safeGetRole() int{
 */
 func (rf *Raft) resetOrNewElectTimer(d time.Duration) {
 	//may have bug here, re-look timer api carefully
-	if !rf.electTimer.Stop() {
-	//	<-rf.electTimer.C
-	}
+	//DPrintf("peer %d, resetTimer %v\n", rf.me, d)
+	rf.electTimer.Stop()
 	rf.electTimer.Reset(d)
 }
 /*
