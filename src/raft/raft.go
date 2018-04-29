@@ -165,23 +165,44 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// Your code here (2A, 2B).
 	/**/
 	//DPrintf("Invoke RequestVote\n")
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
+	curTerm := 0
+	voted := -1
+	//var log []LogEntry
 
-	if args.Term < rf.currentTerm {
-		reply.Term = rf.currentTerm
+	rf.withLock(func(){
+		curTerm  = rf.currentTerm
+		voted = rf.votedFor
+		//log = rf.log
+	})
+
+	switch{
+	case args.Term < curTerm :
+		reply.Term = curTerm
 		reply.VoteGranted = false
 		return
-	}else {
-		rf.electTimer.Reset(randomTimeout())
-		cond1 := rf.votedFor == -1 || rf.votedFor == args.CandicateId
-		cond2 := args.LastLogTerm > rf.log[len(rf.log)-1].Term || ( args.LastLogTerm == rf.log[len(rf.log)-1].Term && args.LastLogIndex >= len(rf.log) )
+	case args.Term > curTerm://执行到这儿，currentTerm变了怎么办？发送channl之前宕机怎么办
+		rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
+		rf.withLock(func(){
+			rf.currentTerm = args.Term
+			rf.role = follower
+			//rf.votedFor = args.CandicateId
+			reply.Term = args.Term
+			reply.VoteGranted = false
+		})
+		rf.newTerm <- 1
+		return
+	case args.Term == curTerm:
+		rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
+		cond1 := voted == -1 || voted == args.CandicateId
+		//cond2 := args.LastLogTerm > rf.log[len(rf.log)-1].Term || ( args.LastLogTerm == rf.log[len(rf.log)-1].Term && args.LastLogIndex >= len(rf.log) )
+		cond2 := true
 		if cond1 && cond2 {
-			reply.Term = rf.currentTerm
+			reply.Term = curTerm
 			reply.VoteGranted = true
+			rf.withLock(func(){rf.votedFor = args.CandicateId})
 			return
 		}else{
-			reply.Term = rf.currentTerm
+			reply.Term = curTerm
 			reply.VoteGranted = false
 			return
 		}
@@ -240,12 +261,32 @@ type AppendEntriesReply struct{
 
 func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply){
 	//DPrintf("Invoke AppendEntries\n")
-	if args.Term < rf.currentTerm {
-		reply.Term = rf.currentTerm
+	curTerm := 0
+	rf.withLock(func(){
+		curTerm = rf.currentTerm
+	})
+	switch{
+	case args.Term < curTerm:
+		reply.Term = curTerm
 		reply.Success=false
 		return
+	case args.Term > curTerm:
+		rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
+		rf.withLock(func(){
+			rf.currentTerm = args.Term
+			rf.role = follower
+			//rf.votedFor = args.CandicateId
+			reply.Term = args.Term
+			reply.Success = true
+		})
+		rf.newTerm <- 1
+		return
+	case args.Term == curTerm:
+		rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
+		reply.Term = curTerm
+		reply.Success = true
+		return
 	}
-	rf.electTimer.Reset(randomTimeout())
 }
 func (rf *Raft) sendAppendEntries(server int, args* AppendEntriesArgs, reply* AppendEntriesReply) bool{
 	ok := rf.peers[server].Call("Raft.AppendEntries", args, reply)
@@ -339,11 +380,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 		switch role{
 			case follower:
 				select{
-					case c := <-rf.newTerm:
-						rf.withLock(func(){
-							rf.currentTerm=c // set term ,convert to follower ,把赋值放到前面？3处都要修改,收到响应要改，rpc请求要改
-							rf.role=follower
-						})
+					case <-rf.newTerm:
 						goto start
 					case <-rf.electTimer.C:
 						rf.withLock(func(){rf.role=candicate})
@@ -353,7 +390,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 			case candicate:
 				rf.withLock(func(){rf.currentTerm++})
 				rf.withLock(func(){rf.votedFor = rf.me})
-				rf.resetOrNewElectTimer(randomTimeout())
+				rf.withLock(func(){rf.resetOrNewElectTimer(randomTimeout())} )
 				//send requestVote
 				votes := 0
 				var mut sync.Mutex
@@ -382,7 +419,11 @@ func Make(peers []*labrpc.ClientEnd, me int,
 						})
 						//收到请求时，term可能已经变了，不是当前term的投票没有意义
 						if reply.Term > curTerm{
-							rf.newTerm <- reply.Term
+							rf.withLock(func(){
+								rf.currentTerm = reply.Term
+								rf.role = follower
+							})
+							rf.newTerm <- 1
 							return
 						}
 						//是否换成选举成功channel，channel会不会清不干净？
@@ -395,11 +436,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 				}
 				//transition
 				select{
-					case c := <-rf.newTerm:
-						rf.withLock(func(){
-							rf.currentTerm=c
-							rf.role=follower
-						})
+					case <-rf.newTerm:
 						goto start
 					case <-rf.discoverLeader:
 						rf.withLock(func(){rf.role=follower})
@@ -422,11 +459,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 
 				select{
 					//case <- command:
-					case c := <-rf.newTerm:
-						rf.withLock(func(){
-							rf.currentTerm=c
-							rf.role=follower
-						})
+					case <-rf.newTerm:
 						goto start
 					default:
 						/*
@@ -452,7 +485,11 @@ func Make(peers []*labrpc.ClientEnd, me int,
 									curTerm := 0
 									rf.withLock(func(){curTerm = rf.currentTerm})
 									if reply.Term > curTerm{
-										rf.newTerm <- reply.Term
+										rf.withLock(func(){
+											rf.currentTerm = reply.Term
+											rf.role = follower
+										})
+										rf.newTerm <- 1
 										return
 									}
 								}
@@ -504,8 +541,6 @@ func (rf *Raft) safeGetRole() int{
 */
 func (rf *Raft) resetOrNewElectTimer(d time.Duration) {
 	//may have bug here, re-look timer api carefully
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
 	if !rf.electTimer.Stop() {
 	//	<-rf.electTimer.C
 	}
