@@ -64,8 +64,8 @@ type Raft struct {
 	
 	role int
 	electTimer *time.Timer
-	discoverLeader  <-chan int
-	newTerm    <-chan int
+	discoverLeader  chan int
+	newTerm    chan int
 
 	/**/
 }
@@ -173,7 +173,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		reply.VoteGranted = false
 		return
 	}else {
-		rf.election_timer.Reset( time.Duration(election_timeout + rand.Intn(election_timeout_width)) * time.Millisecond)
+		rf.electTimer.Reset(randomTimeout())
 		cond1 := rf.votedFor == -1 || rf.votedFor == args.CandicateId
 		cond2 := args.LastLogTerm > rf.log[len(rf.log)-1].Term || ( args.LastLogTerm == rf.log[len(rf.log)-1].Term && args.LastLogIndex >= len(rf.log) )
 		if cond1 && cond2 {
@@ -245,7 +245,7 @@ func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply
 		reply.Success=false
 		return
 	}
-	rf.election_timer.Reset( time.Duration(election_timeout + rand.Intn(election_timeout_width)) * time.Millisecond)
+	rf.electTimer.Reset(randomTimeout())
 }
 func (rf *Raft) sendAppendEntries(server int, args* AppendEntriesArgs, reply* AppendEntriesReply) bool{
 	ok := rf.peers[server].Call("Raft.AppendEntries", args, reply)
@@ -331,49 +331,62 @@ func Make(peers []*labrpc.ClientEnd, me int,
 	for{
 	start://use continue?
 
-		//check commit
-
+		/*
+			check commit
+		*/
 		role := 0
-		rf.withLock(func(){role=tf.role})
+		rf.withLock(func(){role=rf.role})
 		switch role{
 			case follower:
-				c := 0
 				select{
-					case c <-rf.newTerm:
+					case c := <-rf.newTerm:
 						rf.withLock(func(){
-							rf.currentTerm=c
+							rf.currentTerm=c // set term ,convert to follower ,把赋值放到前面？3处都要修改,收到响应要改，rpc请求要改
 							rf.role=follower
 						})
 						goto start
 					case <-rf.electTimer.C:
-						rf.withLock(func(){tf.role=candicate})
+						rf.withLock(func(){rf.role=candicate})
 						goto start
 				}
 
 			case candicate:
-				rf.withLock(func(){tf.currentTerm++})
+				rf.withLock(func(){rf.currentTerm++})
 				rf.withLock(func(){rf.votedFor = rf.me})
-				//request votes
-//not finished
-//recv channel
-//where to fire signal
-//how to send rpc
 				rf.resetOrNewElectTimer(randomTimeout())
+				//send requestVote
 				votes := 0
 				var mut sync.Mutex
 				for i :=range rf.peers{
 					go func(server int, mu *sync.Mutex){
-						args := &RequestVoteArgs{rf.currentTerm, me, len(rf.log)-1, rf.log[len(rf.log)-1].Term}
+						args := &RequestVoteArgs{Term:rf.currentTerm, CandicateId:rf.me}//race condition
 						reply := RequestVoteReply{}
 						for ok:=false; !ok;{
+							//发送期间，rf的term变了怎么办：
+							//ans:这种情况说明term落后了，仍用最初的term发出即可，请求会被拒绝
+
 							ok = rf.sendRequestVote(server, args, &reply)
-							time.Sleep(100)
+							//RPC 的行为？阻塞？重传？
+							//if !ok {
+							//	time.Sleep(fixedTimeout())
+							//}
 						}
-						if reply.Term > rf.currentTerm{
-							rf.currentTerm = reply.Term
-							rf.role = follower
+						//再读边界情况 student tutorial
+						//等到rpc响应的时候，role已经变了，怎么办？
+						//ans:目前来看，没有影响，重新选举时候是新的vote变量副本，旧副本上的vote修改不影响	
+						curTerm := 0
+						equal := false
+						rf.withLock(func(){
+							curTerm = rf.currentTerm
+							equal = reply.Term== rf.currentTerm
+						})
+						//收到请求时，term可能已经变了，不是当前term的投票没有意义
+						if reply.Term > curTerm{
+							rf.newTerm <- reply.Term
+							return
 						}
-						if reply.VoteGranted{
+						//是否换成选举成功channel，channel会不会清不干净？
+						if equal && reply.VoteGranted{
 							mu.Lock()
 							votes++
 							mu.Unlock()
@@ -381,53 +394,72 @@ func Make(peers []*labrpc.ClientEnd, me int,
 					}(i, &mut)
 				}
 				//transition
-				c := 0
 				select{
-					case c <-rf.newTerm:
+					case c := <-rf.newTerm:
 						rf.withLock(func(){
 							rf.currentTerm=c
 							rf.role=follower
 						})
 						goto start
-					case <-discoverLeader:
-						tf.withLock(func(){rf.role=follower})
-					case <-rf.election_timer.C:
+					case <-rf.discoverLeader:
+						rf.withLock(func(){rf.role=follower})
+						goto start
+					case <-rf.electTimer.C:
 						goto start
 					default:
 						mut.Lock()
 						if votes > len(rf.peers)/2 {
-							rf.role=leader
+							rf.role=leader//race condition
 							mut.Unlock()
 							goto start
 						}
 						mut.Unlock()
 				}
 			case leader:
-				c := 0
+				/*
+					initial empty heartbeat?
+				*/
+
 				select{
-					case c <-rf.newTerm:
+					//case <- command:
+					case c := <-rf.newTerm:
 						rf.withLock(func(){
 							rf.currentTerm=c
 							rf.role=follower
 						})
 						goto start
 					default:
+						/*
+						for{
+							switch{
+								case cond1
+								case cond2
+								default:
+									headtbeat
+							}
+						}
+						*/
+						//heartbeat
 						for i :=range rf.peers{
+							if i==rf.me {
+								continue
+							}
 							go func(server int){
-								args := &AppendEntriesArgs{Term:rf.currentTerm, LeaderId:rf.me}
+								args := &AppendEntriesArgs{Term:rf.currentTerm, LeaderId:rf.me}//race condition
 								reply := AppendEntriesReply{}
 								ok := rf.sendAppendEntries(server, args, &reply)
 								if ok {
-									if reply.Term > rf.currentTerm{
-										rf.role = follower
+									curTerm := 0
+									rf.withLock(func(){curTerm = rf.currentTerm})
+									if reply.Term > curTerm{
+										rf.newTerm <- reply.Term
+										return
 									}
 								}
 							}(i)
 						}
-						if rf.role==follower{
-							goto start
-						}
-						time.Sleep(100)
+						//不加sleep会发送过多消息
+						time.Sleep(fixedTimeout())
 				}
 		}
 	}
@@ -443,7 +475,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 const(
 	election_timeout = 500
 	time_interval =500
-	fixed_timeout = 100
+	fixed_timeout = 200
 )
 
 func randomTimeout() time.Duration {
@@ -475,7 +507,7 @@ func (rf *Raft) resetOrNewElectTimer(d time.Duration) {
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
 	if !rf.electTimer.Stop() {
-		<-rf.electTimer.C
+	//	<-rf.electTimer.C
 	}
 	rf.electTimer.Reset(d)
 }
