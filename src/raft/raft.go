@@ -384,6 +384,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 		role := 0
 		rf.withLock(func(){role=rf.role})
 		switch role{
+			//channel 用作转换条件合不合适，状态转移是瞬时的，channel有思索风险
 			case follower:
 				DPrintf("peer %d, ->follower\n", rf.me)
 				for{
@@ -403,7 +404,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 				rf.withLock(func(){rf.votedFor = rf.me})
 				rf.withLock(func(){rf.resetOrNewElectTimer(randomTimeout())} )
 				//send requestVote
-				votes := 0
+				votes := 1
 				//var mux sync.Mutex
 				for i := range rf.peers{
 					if i == rf.me {
@@ -459,7 +460,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 							win := false
 							rf.withLock(func(){
 								votes++
-								win = (votes >= int(len(rf.peers)/2))
+								win = (votes > int(len(rf.peers)/2))
 							})
 							if win {
 								rf.winElect <- 1
@@ -515,6 +516,8 @@ func Make(peers []*labrpc.ClientEnd, me int,
 									rf.votedFor = -1
 								})
 								rf.newTerm <- 1
+								//timeout是否合适？
+								rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 								return
 							}
 						}
@@ -563,6 +566,8 @@ func Make(peers []*labrpc.ClientEnd, me int,
 											rf.votedFor = -1
 										})
 										rf.newTerm <- 1
+										//在这里重置timer是否合适？
+										rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 										return
 									}
 								}
@@ -583,10 +588,11 @@ func Make(peers []*labrpc.ClientEnd, me int,
 //
 //timeout settings
 //
+//RPC timeout是多少
 const(
-	election_timeout = 150
-	time_interval =150
-	fixed_timeout = 50
+	election_timeout = 300
+	time_interval = 300
+	fixed_timeout = 20
 )
 
 func randomTimeout() time.Duration {
