@@ -68,6 +68,8 @@ type Raft struct {
 	discoverLeader  chan int
 	newTerm    chan int
 	winElect    chan int
+
+	newCmd chan interface{}
 	/**/
 }
 /**/
@@ -165,6 +167,9 @@ type RequestVoteReply struct {
 func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	// Your code here (2A, 2B).
 	/**/
+//	rf.mu.Lock()
+//	defer rf.mu.Unlock()
+	DPrintf("%d[MESSG][%d]peer %d <- peer %d, Rcv ReqVote(%d)", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me, args.CandicateId, args.Term)
 	curTerm := 0
 	voted := -1
 	//var log []LogEntry
@@ -189,6 +194,9 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 			voted = -1
 		})
 		rf.newTerm <- 1
+		rf.withLock( func(){ 
+			rf.resetOrNewElectTimer(randomTimeout())
+		} )
 		fallthrough
 	case args.Term == curTerm:
 		cond1 := voted == -1 || voted == args.CandicateId
@@ -197,8 +205,12 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		if cond1 && cond2 {
 			reply.Term = curTerm
 			reply.VoteGranted = true
-			rf.withLock(func(){rf.votedFor = args.CandicateId})
-			rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
+			rf.withLock(func(){
+				rf.votedFor = args.CandicateId
+			})
+			rf.withLock( func(){ 
+				rf.resetOrNewElectTimer(randomTimeout())
+			} )
 			return
 		}else{
 			reply.Term = curTerm
@@ -239,9 +251,8 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 // the struct itself.
 //
 func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *RequestVoteReply) bool {
-	DPrintf("%d[MESSG]peer %d -> peer %d, Snd ReqVote", time.Now().UnixNano()/1000000, rf.me, server)
 	ok := rf.peers[server].Call("Raft.RequestVote", args, reply)
-	DPrintf("%d[MESSG]peer %d <- peer %d, ReqVote Rep, %v", time.Now().UnixNano()/1000000, rf.me, server, ok)
+	DPrintf("%d[MESSG][%d]peer %d <- peer %d, ReqVote Rep ,(%d, %v)", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me, server, reply.Term, reply.VoteGranted)
 	return ok
 }
 
@@ -261,6 +272,9 @@ type AppendEntriesReply struct{
 }
 
 func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply){
+	//rf.mu.Lock()
+	//defer rf.mu.Unlock()
+	DPrintf("%d[MESSG][%d]peer %d <- peer %d, Rcv ApdEntry(%d)", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me, args.LeaderId, args.Term)
 	curTerm := 0
 	isCand:=false
 	rf.withLock(func(){
@@ -277,17 +291,21 @@ func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply
 		rf.withLock(func(){
 			rf.currentTerm = args.Term
 			rf.role = follower
+			curTerm = args.Term
 			//isCand = false
 			//rf.votedFor = args.CandicateId
-			reply.Term = args.Term
-			reply.Success = true
+			//reply.Term = args.Term
+			//reply.Success = true
 		})
+		//rf.resetOrNewElectTimer(randomTimeout())
 		rf.newTerm <- 1
-		//rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
-		return
+		fallthrough
 	case args.Term == curTerm:
 		reply.Term = curTerm
 		reply.Success = true
+		rf.withLock( func(){ 
+			rf.resetOrNewElectTimer(randomTimeout())
+		})
 		if isCand {
 			rf.withLock(func(){ 
 				if rf.role == leader { panic("Two leader with same term!") }
@@ -295,15 +313,13 @@ func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply
 			})
 			rf.discoverLeader <- 1
 		}
-		rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 		return
 	}
 }
 
 func (rf *Raft) sendAppendEntries(server int, args* AppendEntriesArgs, reply* AppendEntriesReply) bool{
-	DPrintf("%d[MESSG]peer %d -> peer %d, Snd ApdEntry", time.Now().UnixNano()/1000000, rf.me, server)
 	ok := rf.peers[server].Call("Raft.AppendEntries", args, reply)
-	DPrintf("%d[MESSG]peer %d <- peer %d, ApdEntry Rep, %v", time.Now().UnixNano()/1000000, rf.me, server, ok)
+	DPrintf("%d[MESSG][%d]peer %d <- peer %d, ApdEntry Rep, (%d, %v)", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me, server, reply.Term, reply.Success)
 	return ok
 }
 /**/
@@ -329,8 +345,15 @@ func (rf *Raft) Start(command interface{}) (int, int, bool) {
 	isLeader := true
 
 	// Your code here (2B).
-
-
+	/**/
+	term, isLeader = rf.GetState()
+	if isLeader {
+		index = len(rf.log)+1
+		go func(){
+			rf.newCmd <- command
+		}()
+	}
+	/**/
 	return index, term, isLeader
 }
 
@@ -398,40 +421,40 @@ func Make(peers []*labrpc.ClientEnd, me int,
 		switch role{
 			//channel 用作转换条件合不合适，状态转移是瞬时的，channel有思索风险
 			case follower:
-				DPrintf("%d[STATE]peer %d, ->follower\n", time.Now().UnixNano()/1000000, rf.me)
+			//	rf.resetOrNewElectTimer(randomTimeout())
+				DPrintf("%d[STATE][%d]peer %d, ->follower\n", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me)
 				for{
 				select{
 					case <-rf.newTerm:
-						DPrintf("%d[STATE]peer %d, follower: newTerm", time.Now().UnixNano()/1000000, rf.me)
+						DPrintf("%d[STATE][%d]peer %d, follower: newTerm", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me)
 						goto start
 					case <-rf.electTimer.C:
-						DPrintf("%d[STATE]peer %d, follower: elec timeout", time.Now().UnixNano()/1000000, rf.me)
+						DPrintf("%d[STATE][%d]peer %d, follower: elec timeout", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 						rf.withLock(func(){rf.role=candicate})
 						goto start
 				}//end select
 				}//end for
 			case candicate:
-				DPrintf("%d[STATE]peer %d, ->candicate", time.Now().UnixNano()/1000000, rf.me)
+				cTerm, ca := 0, 0
 				rf.withLock(func(){
 					rf.currentTerm++
 					rf.votedFor = rf.me
 					rf.resetOrNewElectTimer(randomTimeout())
+					
+					cTerm = rf.currentTerm
+					ca    = rf.me
+
+					DPrintf("%d[STATE][%d]peer %d, ->candicate", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 				})
 				//send requestVote
-				votes := 1
-				win := false
+				votes, win:= 1, false
+				var voteMux sync.Mutex
 				//var mux sync.Mutex
 				for i := range rf.peers{
 					if i == rf.me {
 						continue
 					}
-					go func(server int){
-						curTerm := 0
-						cand := 0
-						rf.withLock(func(){
-							curTerm = rf.currentTerm
-							cand	= rf.me
-						})
+					go func(server, curTerm, cand int, voteLock* sync.Mutex){
 						args := &RequestVoteArgs{Term:curTerm, CandicateId:cand}
 						reply := RequestVoteReply{}
 						for ok:=false; !ok;{
@@ -462,57 +485,54 @@ func Make(peers []*labrpc.ClientEnd, me int,
 								rf.votedFor = -1
 								rf.role = follower
 							})
+							rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 							rf.newTerm <- 1
 							return
 						case reply.Term==curTerm && reply.VoteGranted:
-							iswin := false
-							rf.withLock(func(){iswin=win})//use new lock?
+							voteLock.Lock()
+								iswin := win
+							voteLock.Unlock()
 							if iswin { return }
-							rf.withLock(func(){
+							voteLock.Lock()
 								votes++
 								win = (votes > int(len(rf.peers)/2))
-							})
-							if win {
+								iswin = win
+							voteLock.Unlock()
+							if iswin {
 								rf.winElect <- 1
 							}
 						}
-					}(i)
+					}(i, cTerm, ca, &voteMux)
 				}
 				//transition
 				for{
 				select{
 					case <-rf.newTerm:
-						DPrintf("%d[STATE]peer %d, candicate: newTerm", time.Now().UnixNano()/1000000, rf.me)
+						DPrintf("%d[STATE][%d]peer %d, candicate: newTerm", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 						goto start
 					case <-rf.winElect:
-						DPrintf("%d[STATE]peer %d, candicate: voted sucess", time.Now().UnixNano()/1000000, rf.me)
+						DPrintf("%d[STATE][%d]peer %d, candicate: voted sucess", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 						rf.withLock(func(){rf.role=leader})
 						goto start
 					case <-rf.discoverLeader:
-						DPrintf("%d[STATE]peer %d, candicate: disc leader", time.Now().UnixNano()/1000000, rf.me)
+						DPrintf("%d[STATE][%d]peer %d, candicate: disc leader", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 						rf.withLock(func(){rf.role=follower})
 						goto start
 					case <-rf.electTimer.C:
-						DPrintf("%d[STATE]peer %d, candicate: elect timeout", time.Now().UnixNano()/1000000, rf.me)
+						DPrintf("%d[STATE][%d]peer %d, candicate: elect timeout", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 						goto start
 				}//end select
 				}//end for
 			case leader:
-				DPrintf("%d[STATE]peer %d, ->leader", time.Now().UnixNano()/1000000, rf.me)
+				DPrintf("%d[STATE][%d]peer %d, ->leader", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 				/*
 					initial empty heartbeat?
 				*/
+				cTerm, lId := 0, 0
+				rf.withLock(func(){ cTerm, lId = rf.currentTerm, rf.me})
 				for i := range rf.peers{
-					if i==rf.me {
-						continue
-					}
-					go func(server int){
-						curTerm :=0
-						leaderId :=0
-						rf.withLock(func(){
-							curTerm = rf.currentTerm
-							leaderId = rf.me
-						})
+					if i == rf.me {continue}
+					go func(server, curTerm, leaderId int){
 						args := &AppendEntriesArgs{Term:curTerm, LeaderId:leaderId}
 						reply := AppendEntriesReply{}
 						ok := rf.sendAppendEntries(server, args, &reply)
@@ -526,47 +546,30 @@ func Make(peers []*labrpc.ClientEnd, me int,
 								rf.withLock(func(){
 									rf.currentTerm = reply.Term
 									rf.role = follower
-									rf.votedFor = -1
+									//rf.votedFor = -1
 								})
+								rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 								rf.newTerm <- 1
-								//timeout是否合适？
-								//rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 								return
 							}
 						}
-					}(i)
+					}(i, cTerm ,lId)
 				}
 				rf.withLock(func(){ rf.resetHeartbeatTimer(fixedTimeout()) })
 				for{
 				select{
 					//case <- command:
 					case <-rf.newTerm:
-						DPrintf("%d[STATE]peer %d, leader: new Term", time.Now().UnixNano()/1000000, rf.me)
-						rf.withLock(func(){ rf.resetHeartbeatTimer(fixedTimeout()) })
+						DPrintf("%d[STATE][%d]peer %d, leader: new Term", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 						goto start
+					case <-rf.newCmd:
+						panic("PANIC")
 					case <- rf.heartbeatTimer.C:
-						/*
-						for{
-							switch{
-								case cond1
-								case cond2
-								default:
-									headtbeat
-							}
-						}
-						*/
-						//heartbeat
-						for i := range rf.peers{
-							if i==rf.me {
-								continue
-							}
-							go func(server int){
-								curTerm :=0
-								leaderId :=0
-								rf.withLock(func(){
-									curTerm = rf.currentTerm
-									leaderId = rf.me
-								})
+						cTerm, lId := 0, 0
+						rf.withLock(func(){ cTerm, lId=rf.currentTerm, rf.me})
+						for i := range rf.peers {
+							if i==rf.me { continue }
+							go func(server, curTerm, leaderId int){
 								args := &AppendEntriesArgs{Term:curTerm, LeaderId:leaderId}
 								reply := AppendEntriesReply{}
 								ok := rf.sendAppendEntries(server, args, &reply)
@@ -580,15 +583,14 @@ func Make(peers []*labrpc.ClientEnd, me int,
 										rf.withLock(func(){
 											rf.currentTerm = reply.Term
 											rf.role = follower
-											rf.votedFor = -1
+											//rf.votedFor = -1
 										})
+										rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 										rf.newTerm <- 1
-										//在这里重置timer是否合适？
-										//rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 										return
 									}
 								}
-							}(i)
+							}(i, cTerm, lId)
 						}
 						rf.withLock(func(){ rf.resetHeartbeatTimer(fixedTimeout()) })
 				}//end select
@@ -622,48 +624,26 @@ func fixedTimeout() time.Duration {
 //
 //helpful func
 //
-/*
-func (rf *Raft) safeSetRole(role int){
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
-	rf.role = role
-}
 
-func (rf *Raft) safeGetRole() int{
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
-	return rf.role
-}
-*/
 func (rf *Raft) resetOrNewElectTimer(d time.Duration) {
 	//may have bug here, re-look timer api carefully
-	rf.electTimer.Stop()
-	rf.electTimer.Reset(d)
+	ok := rf.electTimer.Stop()
+	if ok {
+		rf.electTimer.Reset(d)
+		return
+	}else{
+		c := rf.electTimer.C
+		go func(clc <- chan time.Time){<-clc}(c)
+		rf.electTimer = time.NewTimer(d)
+	}
+	//rf.electTimer = time.NewTimer(d) 
 }
 
 func (rf *Raft) resetHeartbeatTimer(d time.Duration){
 	rf.heartbeatTimer.Stop()
 	rf.heartbeatTimer.Reset(d)
 }
-/*
-func (rf *Raft) safeIncTerm(){
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
-	rf.currentTerm++
-}
 
-func (rf *Raft) safeUpdateTerm(newTerm int){
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
-	rf.currentTerm = newTerm
-}
-
-func (rf* Raft) safeVotedFor(peer int){
-	rf.mu.Lock()
-	defer rf.mu.Unlock()
-	rf.votedFor = peer 
-}
-*/
 func (rf* Raft) withLock(f func()){
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
