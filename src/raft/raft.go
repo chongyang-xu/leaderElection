@@ -180,7 +180,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 		reply.Term = curTerm
 		reply.VoteGranted = false
 		return
-	case args.Term > curTerm://执行到这儿，发送channl之前宕机怎么办
+	case args.Term > curTerm:
 		rf.withLock(func(){
 			rf.currentTerm = args.Term
 			rf.role = follower
@@ -239,9 +239,9 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 // the struct itself.
 //
 func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *RequestVoteReply) bool {
-	DPrintf("[MESSG]peer %d -> peer %d, Snd ReqVote", rf.me, server)
+	DPrintf("%d[MESSG]peer %d -> peer %d, Snd ReqVote", time.Now().UnixNano(), rf.me, server)
 	ok := rf.peers[server].Call("Raft.RequestVote", args, reply)
-	DPrintf("[MESSG]peer %d <- peer %d, ReqVote Rep, %v", rf.me, server, ok)
+	DPrintf("%d[MESSG]peer %d <- peer %d, ReqVote Rep, %v", time.Now().UnixNano(), rf.me, server, ok)
 	return ok
 }
 
@@ -262,39 +262,48 @@ type AppendEntriesReply struct{
 
 func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply){
 	curTerm := 0
-	ifcan:=false
+	isCand:=false
 	rf.withLock(func(){
 		curTerm = rf.currentTerm
-		ifcan = (rf.role==candicate)
+		isCand = (rf.role==candicate)
 	})
 	switch{
 	case args.Term < curTerm:
 		reply.Term = curTerm
 		reply.Success=false
 		return
+	//有问题 转换到follower 
 	case args.Term > curTerm:
-		rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 		rf.withLock(func(){
 			rf.currentTerm = args.Term
 			rf.role = follower
+			//isCand = false
 			//rf.votedFor = args.CandicateId
 			reply.Term = args.Term
 			reply.Success = true
 		})
 		rf.newTerm <- 1
+		rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 		return
 	case args.Term == curTerm:
-		rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 		reply.Term = curTerm
 		reply.Success = true
-		if ifcan {rf.discoverLeader <- 1}
+		if isCand {
+			rf.withLock(func(){ 
+				if rf.role == leader { panic("Two leader with same term!") }
+				rf.role = follower 
+			})
+			rf.discoverLeader <- 1
+		}
+		rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
 		return
 	}
 }
+
 func (rf *Raft) sendAppendEntries(server int, args* AppendEntriesArgs, reply* AppendEntriesReply) bool{
-	DPrintf("[MESSG]peer %d -> peer %d, Snd ApdEntry", rf.me, server)
+	DPrintf("%d[MESSG]peer %d -> peer %d, Snd ApdEntry", time.Now().UnixNano(), rf.me, server)
 	ok := rf.peers[server].Call("Raft.AppendEntries", args, reply)
-	DPrintf("[MESSG]peer %d <- peer %d, ApdEntry Rep, %v", rf.me, server, ok)
+	DPrintf("%d[MESSG]peer %d <- peer %d, ApdEntry Rep, %v", time.Now().UnixNano(), rf.me, server, ok)
 	return ok
 }
 /**/
@@ -389,25 +398,26 @@ func Make(peers []*labrpc.ClientEnd, me int,
 		switch role{
 			//channel 用作转换条件合不合适，状态转移是瞬时的，channel有思索风险
 			case follower:
-				DPrintf("[STATE]peer %d, ->follower\n", rf.me)
+				DPrintf("%d[STATE]peer %d, ->follower\n", time.Now().UnixNano(), rf.me)
 				for{
 				select{
 					case <-rf.newTerm:
-						DPrintf("[STATE]peer %d, follower: newTerm\n", rf.me)
+						DPrintf("%d[STATE]peer %d, follower: newTerm", time.Now().UnixNano(), rf.me)
 						goto start
 					case <-rf.electTimer.C:
-						DPrintf("[STATE]peer %d, follower: elec timeout\n", rf.me)
+						DPrintf("%d[STATE]peer %d, follower: elec timeout", time.Now().UnixNano(), rf.me)
 						rf.withLock(func(){rf.role=candicate})
 						goto start
 				}//end select
 				}//end for
 			case candicate:
-				DPrintf("[STATE]peer %d, ->candicate\n",rf.me)
+				DPrintf("%d[STATE]peer %d, ->candicate", time.Now().UnixNano(), rf.me)
 				rf.withLock(func(){rf.currentTerm++})
 				rf.withLock(func(){rf.votedFor = rf.me})
 				rf.withLock(func(){rf.resetOrNewElectTimer(randomTimeout())} )
 				//send requestVote
 				votes := 1
+				win := false
 				//var mux sync.Mutex
 				for i := range rf.peers{
 					if i == rf.me {
@@ -431,22 +441,18 @@ func Make(peers []*labrpc.ClientEnd, me int,
 							//	time.Sleep(fixedTimeout())
 							//}
 						}
-						//再读边界情况 student tutorial
 						//等到rpc响应的时候，role已经变了，怎么办？
 						//ans:目前来看，没有影响，重新选举时候是新的vote变量副本，旧副本上的vote修改不影响	
-						/*curTerm := 0
-						curTerm = 0
-						equal := false
-						rf.withLock(func(){
-							curTerm = rf.currentTerm
-							equal = reply.Term== rf.currentTerm
-						})
-*/
+
+						origTerm := curTerm
 						rf.withLock(func(){ curTerm = rf.currentTerm })
 						//收到请求时，term可能已经变了，不是当前term的投票没有意义
+						if origTerm != curTerm {
+							return //follow Student totorial
+						}
 						switch{
 						case reply.Term < curTerm:
-							//do what?
+							//should never go here
 							return
 						case reply.Term > curTerm:
 							rf.withLock(func(){
@@ -456,9 +462,10 @@ func Make(peers []*labrpc.ClientEnd, me int,
 							})
 							rf.newTerm <- 1
 							return
-						//是否换成选举成功channel，channel会不会清不干净？
 						case reply.Term==curTerm && reply.VoteGranted:
-							win := false
+							iswin := false
+							rf.withLock(func(){iswin=win})//use new lock?
+							if iswin { return }
 							rf.withLock(func(){
 								votes++
 								win = (votes > int(len(rf.peers)/2))
@@ -473,23 +480,23 @@ func Make(peers []*labrpc.ClientEnd, me int,
 				for{
 				select{
 					case <-rf.newTerm:
-						DPrintf("[STATE]peer %d, candicate: newTerm\n", rf.me)
+						DPrintf("%d[STATE]peer %d, candicate: newTerm", time.Now().UnixNano(), rf.me)
 						goto start
 					case <-rf.winElect:
-						DPrintf("[STATE]peer %d, candicate: voted sucess\n", rf.me)
+						DPrintf("%d[STATE]peer %d, candicate: voted sucess", time.Now().UnixNano(), rf.me)
 						rf.withLock(func(){rf.role=leader})
 						goto start
 					case <-rf.discoverLeader:
-						DPrintf("[STATE]peer %d, candicate: disc leader\n", rf.me)
+						DPrintf("%d[STATE]peer %d, candicate: disc leader", time.Now().UnixNano(), rf.me)
 						rf.withLock(func(){rf.role=follower})
 						goto start
 					case <-rf.electTimer.C:
-						DPrintf("[STATE]peer %d, candicate: elect timeout\n", rf.me)
+						DPrintf("%d[STATE]peer %d, candicate: elect timeout", time.Now().UnixNano(), rf.me)
 						goto start
 				}//end select
 				}//end for
 			case leader:
-				DPrintf("[STATE]peer %d, ->leader\n",rf.me)
+				DPrintf("%d[STATE]peer %d, ->leader", time.Now().UnixNano(), rf.me)
 				/*
 					initial empty heartbeat?
 				*/
@@ -529,7 +536,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 				select{
 					//case <- command:
 					case <-rf.newTerm:
-						DPrintf("[STATE]peer %d, leader: new Term\n", rf.me)
+						DPrintf("%d[STATE]peer %d, leader: new Term", time.Now().UnixNano(), rf.me)
 						rf.withLock(func(){ rf.resetHeartbeatTimer(fixedTimeout()) })
 						goto start
 					case <- rf.heartbeatTimer.C:
@@ -559,8 +566,9 @@ func Make(peers []*labrpc.ClientEnd, me int,
 								reply := AppendEntriesReply{}
 								ok := rf.sendAppendEntries(server, args, &reply)
 								if ok {
-									curTerm := 0
+									origTerm := curTerm
 									rf.withLock(func(){curTerm = rf.currentTerm})
+									if origTerm != curTerm{ return }
 									if reply.Term > curTerm{
 										rf.withLock(func(){
 											rf.currentTerm = reply.Term
