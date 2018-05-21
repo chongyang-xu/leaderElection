@@ -1,0 +1,4018 @@
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+signal: interrupt
+FAIL	_/home/xcy/leaderElection/src/raft	1.456s
+Test (2A): election after network failure ...
+signal: interrupt
+FAIL	_/home/xcy/leaderElection/src/raft	0.806s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.526s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.516s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.532s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.527s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.530s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.558s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.515s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.531s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.540s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.516s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.516s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.514s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.516s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.561s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.537s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.514s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.515s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.517s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.516s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.514s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.514s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.514s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.514s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.517s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.520s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.519s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.527s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.520s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.518s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.514s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.515s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.514s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.532s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.546s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.514s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.514s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.515s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.516s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.513s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.518s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.509s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.511s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.512s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.518s
+Test (2A): election after network failure ...
+  ... Passed
+PASS
+ok  	_/home/xcy/leaderElection/src/raft	4.510s

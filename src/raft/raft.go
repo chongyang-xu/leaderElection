@@ -169,7 +169,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 	/**/
 //	rf.mu.Lock()
 //	defer rf.mu.Unlock()
-	DPrintf("%d[MESSG][%d]peer %d <- peer %d, Rcv ReqVote(%d)", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me, args.CandicateId, args.Term)
+	DPrintf("%d[MESSG][%d][peer %d <- peer %d][Rcv ReqVote(%d)]", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me, args.CandicateId, args.Term)
 	curTerm := 0
 	voted := -1
 	//var log []LogEntry
@@ -252,7 +252,7 @@ func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {
 //
 func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *RequestVoteReply) bool {
 	ok := rf.peers[server].Call("Raft.RequestVote", args, reply)
-	DPrintf("%d[MESSG][%d]peer %d <- peer %d, ReqVote Rep ,(%d, %v)", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me, server, reply.Term, reply.VoteGranted)
+	DPrintf("%d[MESSG][%d][peer %d <- peer %d][ReqVote Rep ,(%d, %v)]", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me, server, reply.Term, reply.VoteGranted)
 	return ok
 }
 
@@ -274,7 +274,7 @@ type AppendEntriesReply struct{
 func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply){
 	//rf.mu.Lock()
 	//defer rf.mu.Unlock()
-	DPrintf("%d[MESSG][%d]peer %d <- peer %d, Rcv ApdEntry(%d)", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me, args.LeaderId, args.Term)
+	DPrintf("%d[MESSG][%d][peer %d <- peer %d][Rcv ApdEntry(%d)]", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me, args.LeaderId, args.Term)
 	curTerm := 0
 	isCand:=false
 	rf.withLock(func(){
@@ -319,7 +319,7 @@ func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply
 
 func (rf *Raft) sendAppendEntries(server int, args* AppendEntriesArgs, reply* AppendEntriesReply) bool{
 	ok := rf.peers[server].Call("Raft.AppendEntries", args, reply)
-	DPrintf("%d[MESSG][%d]peer %d <- peer %d, ApdEntry Rep, (%d, %v)", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me, server, reply.Term, reply.Success)
+	DPrintf("%d[MESSG][%d][peer %d <- peer %d][ApdEntry Rep, (%d, %v)]", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me, server, reply.Term, reply.Success)
 	return ok
 }
 /**/
@@ -422,14 +422,14 @@ func Make(peers []*labrpc.ClientEnd, me int,
 			//channel 用作转换条件合不合适，状态转移是瞬时的，channel有思索风险
 			case follower:
 			//	rf.resetOrNewElectTimer(randomTimeout())
-				DPrintf("%d[STATE][%d]peer %d, ->follower\n", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me)
+				DPrintf("%d[STATE][%d][peer %d][follower]\n", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me)
 				for{
 				select{
 					case <-rf.newTerm:
-						DPrintf("%d[STATE][%d]peer %d, follower: newTerm", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me)
+						DPrintf("%d[STATE][%d][peer %d][follower][newTerm]", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me)
 						goto start
 					case <-rf.electTimer.C:
-						DPrintf("%d[STATE][%d]peer %d, follower: elec timeout", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
+						DPrintf("%d[STATE][%d][peer %d][follower][elec timeout]", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 						rf.withLock(func(){rf.role=candicate})
 						goto start
 				}//end select
@@ -444,7 +444,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 					cTerm = rf.currentTerm
 					ca    = rf.me
 
-					DPrintf("%d[STATE][%d]peer %d, ->candicate", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
+					DPrintf("%d[STATE][%d][peer %d][candicate]", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 				})
 				//send requestVote
 				votes, win:= 1, false
@@ -508,23 +508,23 @@ func Make(peers []*labrpc.ClientEnd, me int,
 				for{
 				select{
 					case <-rf.newTerm:
-						DPrintf("%d[STATE][%d]peer %d, candicate: newTerm", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
+						DPrintf("%d[STATE][%d][peer %d][candicate][newTerm]", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 						goto start
 					case <-rf.winElect:
-						DPrintf("%d[STATE][%d]peer %d, candicate: voted sucess", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
+						DPrintf("%d[STATE][%d][peer %d][candicate][voted sucess]", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 						rf.withLock(func(){rf.role=leader})
 						goto start
 					case <-rf.discoverLeader:
-						DPrintf("%d[STATE][%d]peer %d, candicate: disc leader", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
+						DPrintf("%d[STATE][%d][peer %d][candicate][disc leader]", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 						rf.withLock(func(){rf.role=follower})
 						goto start
 					case <-rf.electTimer.C:
-						DPrintf("%d[STATE][%d]peer %d, candicate: elect timeout", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
+						DPrintf("%d[STATE][%d][peer %d][candicate][elect timeout]", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 						goto start
 				}//end select
 				}//end for
 			case leader:
-				DPrintf("%d[STATE][%d]peer %d, ->leader", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
+				DPrintf("%d[STATE][%d][peer %d][leader]", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 				/*
 					initial empty heartbeat?
 				*/
@@ -560,7 +560,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 				select{
 					//case <- command:
 					case <-rf.newTerm:
-						DPrintf("%d[STATE][%d]peer %d, leader: new Term", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
+						DPrintf("%d[STATE][%d][peer %d][leader][new Term]", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 						goto start
 					case <-rf.newCmd:
 						panic("PANIC")
