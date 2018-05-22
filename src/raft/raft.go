@@ -286,7 +286,7 @@ func (rf *Raft) AppendEntries(args* AppendEntriesArgs, reply* AppendEntriesReply
 		reply.Term = curTerm
 		reply.Success=false
 		return
-	//有问题 转换到follower 
+
 	case args.Term > curTerm:
 		rf.withLock(func(){
 			rf.currentTerm = args.Term
@@ -419,7 +419,6 @@ func Make(peers []*labrpc.ClientEnd, me int,
 		role := 0
 		rf.withLock(func(){role=rf.role})
 		switch role{
-			//channel 用作转换条件合不合适，状态转移是瞬时的，channel有思索风险
 			case follower:
 			//	rf.resetOrNewElectTimer(randomTimeout())
 				DPrintf("%d[STATE][%d][peer %d][follower]\n", time.Now().UnixNano()/1000000, rf.currentTerm, rf.me)
@@ -449,7 +448,6 @@ func Make(peers []*labrpc.ClientEnd, me int,
 				//send requestVote
 				votes, win:= 1, false
 				var voteMux sync.Mutex
-				//var mux sync.Mutex
 				for i := range rf.peers{
 					if i == rf.me {
 						continue
@@ -458,27 +456,17 @@ func Make(peers []*labrpc.ClientEnd, me int,
 						args := &RequestVoteArgs{Term:curTerm, CandicateId:cand}
 						reply := RequestVoteReply{}
 						for ok:=false; !ok;{
-							//发送期间，rf的term变了怎么办：
-							//ans:这种情况说明term落后了，仍用最初的term发出即可，请求会被拒绝
 							ok = rf.sendRequestVote(server, args, &reply)
-							//RPC 的行为？阻塞？重传？
-							//if !ok {
-							//	time.Sleep(fixedTimeout())
-							//}
 						}
-						//等到rpc响应的时候，role已经变了，怎么办？
-						//ans:目前来看，没有影响，重新选举时候是新的vote变量副本，旧副本上的vote修改不影响	
 
 						origTerm := curTerm
 						rf.withLock(func(){ curTerm = rf.currentTerm })
-						//收到请求时，term可能已经变了，不是当前term的投票没有意义
 						if origTerm != curTerm {
-							return //follow Student totorial
+							return 
 						}
 						switch{
 						case reply.Term < curTerm:
-							//should never go here
-							return
+							return //impossible path
 						case reply.Term > curTerm:
 							rf.withLock(func(){
 								rf.currentTerm = reply.Term
@@ -526,7 +514,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 			case leader:
 				DPrintf("%d[STATE][%d][peer %d][leader]", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 				/*
-					initial empty heartbeat?
+					initial empty heartbeat
 				*/
 				cTerm, lId := 0, 0
 				rf.withLock(func(){ cTerm, lId = rf.currentTerm, rf.me})
@@ -606,7 +594,6 @@ func Make(peers []*labrpc.ClientEnd, me int,
 //
 //timeout settings
 //
-//RPC timeout是多少
 const(
 	election_timeout = 300
 	time_interval = 200  //need finish election in 5 seconds
@@ -626,7 +613,6 @@ func fixedTimeout() time.Duration {
 //
 
 func (rf *Raft) resetOrNewElectTimer(d time.Duration) {
-	//may have bug here, re-look timer api carefully
 	ok := rf.electTimer.Stop()
 	if ok {
 		rf.electTimer.Reset(d)
