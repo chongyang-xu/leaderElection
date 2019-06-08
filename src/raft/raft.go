@@ -446,52 +446,8 @@ func Make(peers []*labrpc.ClientEnd, me int,
 					DPrintf("%d[STATE][%d][peer %d][candicate]", time.Now().UnixNano()/1000000,  rf.currentTerm, rf.me)
 				})
 				//send requestVote
-				votes, win:= 1, false
-				var voteMux sync.Mutex
-				for i := range rf.peers{
-					if i == rf.me {
-						continue
-					}
-					go func(server, curTerm, cand int, voteLock* sync.Mutex){
-						args := &RequestVoteArgs{Term:curTerm, CandicateId:cand}
-						reply := RequestVoteReply{}
-						for ok:=false; !ok;{
-							ok = rf.sendRequestVote(server, args, &reply)
-						}
-
-						origTerm := curTerm
-						rf.withLock(func(){ curTerm = rf.currentTerm })
-						if origTerm != curTerm {
-							return 
-						}
-						switch{
-						case reply.Term < curTerm:
-							return //impossible path
-						case reply.Term > curTerm:
-							rf.withLock(func(){
-								rf.currentTerm = reply.Term
-								rf.votedFor = -1
-								rf.role = follower
-							})
-							rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
-							rf.newTerm <- 1
-							return
-						case reply.Term==curTerm && reply.VoteGranted:
-							voteLock.Lock()
-								iswin := win
-							voteLock.Unlock()
-							if iswin { return }
-							voteLock.Lock()
-								votes++
-								win = (votes > int(len(rf.peers)/2))
-								iswin = win
-							voteLock.Unlock()
-							if iswin {
-								rf.winElect <- 1
-							}
-						}
-					}(i, cTerm, ca, &voteMux)
-				}
+				RequestVoteFromPeers(rf, cTerm, ca);
+				
 				//transition
 				for{
 				select{
@@ -518,31 +474,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 				*/
 				cTerm, lId := 0, 0
 				rf.withLock(func(){ cTerm, lId = rf.currentTerm, rf.me})
-				for i := range rf.peers{
-					if i == rf.me {continue}
-					go func(server, curTerm, leaderId int){
-						args := &AppendEntriesArgs{Term:curTerm, LeaderId:leaderId}
-						reply := AppendEntriesReply{}
-						ok := rf.sendAppendEntries(server, args, &reply)
-						if ok {
-							origTerm := curTerm
-							rf.withLock(func(){curTerm = rf.currentTerm})
-
-							if origTerm != curTerm{ return }
-
-							if reply.Term > curTerm{
-								rf.withLock(func(){
-									rf.currentTerm = reply.Term
-									rf.role = follower
-									//rf.votedFor = -1
-								})
-								rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
-								rf.newTerm <- 1
-								return
-							}
-						}
-					}(i, cTerm ,lId)
-				}
+				SendHeartBeat(rf, cTerm, lId);
 				rf.withLock(func(){ rf.resetHeartbeatTimer(fixedTimeout()) })
 				for{
 				select{
@@ -555,31 +487,7 @@ func Make(peers []*labrpc.ClientEnd, me int,
 					case <- rf.heartbeatTimer.C:
 						cTerm, lId := 0, 0
 						rf.withLock(func(){ cTerm, lId=rf.currentTerm, rf.me})
-						for i := range rf.peers {
-							if i==rf.me { continue }
-							go func(server, curTerm, leaderId int){
-								args := &AppendEntriesArgs{Term:curTerm, LeaderId:leaderId}
-								reply := AppendEntriesReply{}
-								ok := rf.sendAppendEntries(server, args, &reply)
-								if ok {
-									origTerm := curTerm
-									rf.withLock(func(){curTerm = rf.currentTerm})
-
-									if origTerm != curTerm{ return }
-
-									if reply.Term > curTerm{
-										rf.withLock(func(){
-											rf.currentTerm = reply.Term
-											rf.role = follower
-											//rf.votedFor = -1
-										})
-										rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
-										rf.newTerm <- 1
-										return
-									}
-								}
-							}(i, cTerm, lId)
-						}
+						SendHeartBeat(rf, cTerm, lId);
 						rf.withLock(func(){ rf.resetHeartbeatTimer(fixedTimeout()) })
 				}//end select
 				}//end for
@@ -634,4 +542,82 @@ func (rf* Raft) withLock(f func()){
 	rf.mu.Lock()
 	defer rf.mu.Unlock()
 	f()
+}
+
+func RequestVoteFromPeers(rf* Raft, cTerm int, ca int){//cTerm current Term, ca candicate
+	votes, win:= 1, false
+	var voteMux sync.Mutex
+	for i := range rf.peers{
+		if i == rf.me {
+			continue
+		}
+		go func(server int, curTerm int, cand int, voteLock* sync.Mutex){
+			args := &RequestVoteArgs{Term:curTerm, CandicateId:cand}
+			reply := RequestVoteReply{}
+			for ok:=false; !ok;{
+				ok = rf.sendRequestVote(server, args, &reply)
+			}
+
+			origTerm := curTerm
+			rf.withLock(func(){ curTerm = rf.currentTerm })
+			if origTerm != curTerm {
+				return 
+			}
+			switch{
+			case reply.Term < curTerm:
+				return //impossible path
+			case reply.Term > curTerm:
+				rf.withLock(func(){
+					rf.currentTerm = reply.Term
+					rf.votedFor = -1
+					rf.role = follower
+				})
+				rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
+				rf.newTerm <- 1
+				return
+			case reply.Term==curTerm && reply.VoteGranted:
+				voteLock.Lock()
+					iswin := win
+				voteLock.Unlock()
+				if iswin { return }
+				voteLock.Lock()
+					votes++
+					win = (votes > int(len(rf.peers)/2))
+					iswin = win
+				voteLock.Unlock()
+				if iswin {
+					rf.winElect <- 1
+				}
+			}
+		}(i, cTerm, ca, &voteMux)
+	}
+
+}
+
+func SendHeartBeat(rf *Raft, cTerm int, lId int){
+	for i := range rf.peers{
+		if i == rf.me {continue}
+		go func(server int, curTerm int , leaderId int){
+			args := &AppendEntriesArgs{Term:curTerm, LeaderId:leaderId}
+			reply := AppendEntriesReply{}
+			ok := rf.sendAppendEntries(server, args, &reply)
+			if ok {
+				origTerm := curTerm
+				rf.withLock(func(){curTerm = rf.currentTerm})
+
+				if origTerm != curTerm{ return }
+
+				if reply.Term > curTerm{
+					rf.withLock(func(){
+						rf.currentTerm = reply.Term
+						rf.role = follower
+						//rf.votedFor = -1
+					})
+					rf.withLock( func(){ rf.resetOrNewElectTimer(randomTimeout())} )
+					rf.newTerm <- 1
+					return
+				}
+			}
+		}(i, cTerm ,lId)
+	}
 }
